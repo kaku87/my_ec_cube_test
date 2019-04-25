@@ -1,0 +1,97 @@
+.bk_cart0622 .btn_area p.cart0622 .btn{
+    height: 46px;
+    line-height: 2.5em;
+}
+.bk_cart0622 p.cart0622 button {
+    width: 226px;
+    height: 60px;
+    border:1px solid #B20000;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0;
+    border-radius: 5px;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.88, #D83E2D), color-stop(0.00, #DE5C4F));
+    background: -webkit-linear-gradient(top, #DE5C4F 0%, #D83E2D 88%);
+    background: -moz-linear-gradient(top, #DE5C4F 0%, #D83E2D 88%);
+    background: -o-linear-gradient(top, #DE5C4F 0%, #D83E2D 88%);
+    background: -ms-linear-gradient(top, #DE5C4F 0%, #D83E2D 88%);
+    background: linear-gradient(to bottom, #DE5C4F 0%, #D83E2D 88%);
+    line-height:2.9em;
+}
+.bk_cart0622 p.cart0622 button span {
+    vertical-align: top;
+}
+#item_detail_area .item_detail .bk_cart0622 p.ama_text {
+    font-size: 13px;
+    color: #525263;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+}
+.bk_cart0622 {
+    padding: 20px 15px 30px;
+    margin-top: 20px;
+}    
+.bk_cart0622 .btn_area .btn {
+    height: 40px;
+    line-height: 22px;
+}
+.bk_cart0622 #detail_cart_box__button_area #detail_cart_box__insert_button li{
+    width: 100%;
+    text-align: center;
+}
+.bk_cart0622 #AmazonPayButton {
+    text-align: center;
+}
+.migi0627 {
+    float: left;
+    width: 226px;
+    margin-right: 10px;
+}
+.man0627 {
+    float: left; 
+    width: 30px; 
+    margin-right: 0px; 
+    padding-top: 10px;
+}
+.hida0627 {
+    float: left;
+    width: 226px;
+}
+@media only screen and (max-width: 768px){
+    .bk_cart0622 .btn_area {
+        width: 83%;
+        margin: 0 auto;
+    }
+    .bk_cart0622 p.cart0622 button {
+        width: 100%;
+    }
+    .migi0627 {
+        float: none;
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 2%;
+    }
+    .man0627 {
+        float: none;
+        width: auto;
+        margin-right: 0px;
+        padding-top: 0px;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    .hida0627 {
+        float: none;
+        width: 100%;
+    }
+    .row {
+        padding-bottom: 0px;
+    }
+    .bk_cart0622 {
+        padding: 20px 5% 30px;
+        margin-top: 20px;
+    }   
+}

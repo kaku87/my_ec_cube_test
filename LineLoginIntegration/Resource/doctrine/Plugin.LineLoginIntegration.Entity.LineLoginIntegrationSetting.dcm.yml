@@ -1,0 +1,21 @@
+Plugin\LineLoginIntegration\Entity\LineLoginIntegrationSetting:
+    type: entity
+    table: plg_line_login_integration_setting
+    repositoryClass: Plugin\LineLoginIntegration\Repository\LineLoginIntegrationSettingRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: id
+            generator:
+                strategy: NONE
+    fields:
+        line_channel_id:
+            type: text
+            nullable: true
+        line_channel_secret:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }

@@ -1,0 +1,23 @@
+Plugin\AmazonPayments\Entity\AmazonCustomer:
+    type: entity
+    table: plg_amazonpayments_customer
+    repositoryClass: Plugin\AmazonPayments\Repository\AmazonCustomerRepository
+    id:
+        customer_id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+    fields:
+        amazon_user_id:
+            type: text
+            nullable: false
+    manyToOne:
+        Customer:
+            targetEntity: Eccube\Entity\Customer
+            inversedBy: AmazonCustomers
+            joinColumn:
+                name: customer_id
+                referencedColumnName: customer_id
+                nullable: fals
+    lifecycleCallbacks: {  }

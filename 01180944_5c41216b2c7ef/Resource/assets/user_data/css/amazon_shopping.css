@@ -1,0 +1,25 @@
+
+@media (max-width: 767px)  {
+    #addressBookWidgetDiv {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #walletWidgetDiv {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px)  {
+    #addressBookWidgetDiv {
+        float: left;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    #walletWidgetDiv {
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,41 @@
+Plugin\AmazonPayments\Entity\AmazonOrder:
+    type: entity
+    table: plg_amazonpayments_order
+    repositoryClass: Plugin\AmazonPayments\Repository\AmazonOrderRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: amazon_order_id
+            generator:
+                strategy: AUTO
+    fields:
+        reference_code:
+            type: text
+            nullable: false
+        billable_amount:
+            type: integer
+            nullable: false
+
+    manyToOne:
+        Order:
+            targetEntity: Eccube\Entity\Order
+            joinColumn:
+                name: order_id
+                referencedColumnName: order_id
+        AmazonStatus:
+            targetEntity: Plugin\AmazonPayments\Entity\Master\AmazonStatus
+            joinColumn:
+                name: amazon_status
+                referencedColumnName: id
+
+    oneToMany:
+        AmazonTradings:
+            targetEntity: Plugin\AmazonPayments\Entity\AmazonTrading
+            mappedBy: AmazonOrder
+            orderBy:
+                id: ASC
+            cascade: ["persist"]
+    lifecycleCallbacks: {  }

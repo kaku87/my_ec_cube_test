@@ -1,0 +1,27 @@
+name: AmazonPay
+code: AmazonPayments
+version: 1.3.1
+service:
+    - AmazonPaymentsServiceProvider
+event: AmazonPayments
+orm.path:
+    - /Resource/doctrine
+    - /Resource/doctrine/master
+const:
+    PLUGIN_CODE: AmazonPay30
+    MAX_BILLABLE_AMOUNT: 8400
+    AMAZON_SC_URL: https://sellercentral.amazon.co.jp/hz/me/pmd/payment-details?orderReferenceId=
+    THLOTTLE_ERR_LIMIT: 5
+    THLOTTLE_SLEEP: 2
+    AUTHORIZE_LIMIT: 3
+
+    PAYMENT_METHOD_NOT_ALLOWED: 1
+    INVALID_PAYMENT_METHOD: 2
+    AMAZON_REJECTED: 3
+    TRANSACTION_TIMEDOUT: 4
+
+    TEST_SELLER_ID: A2A80MN1XQCQBA
+    TEST_MWS_ACCESS_KEY_ID: AKIAIYSQRX3565JPAJJA
+    TEST_MWS_SECRET_ACCESS_KEY: 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
+
+    SUPPORT_URL: http://www.iplogic.co.jp/amazondoc/3/faq3.html#shooting9

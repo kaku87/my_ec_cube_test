@@ -1,0 +1,28 @@
+<script type='text/javascript'>
+	window.onAmazonLoginReady = function() {
+		amazon.Login.setClientId('amzn1.application-oa2-client.322fd99d151c4e6cbea1889e5d8aef62');
+	};
+</script>
+<!-- テスト環境JS -->
+<script type="text/javascript" src="https://static-fe.payments-amazon.com/OffAmazonPayments/jp/sandbox/lpa/js/Widgets.js"></script>
+<!-- amazonでお支払いボタン -->
+<div id="AmazonPayButton"></div>
+<!-- amazonでお支払いボタンJS -->
+<script type='text/javascript'>
+	var authRequest;
+	OffAmazonPayments.Button("AmazonPayButton", "A37V6UCLTXYT8M", {
+		type:  "PwA",
+		color: "Gold",
+		size:  "medium",
+		authorization: function() {
+			loginOptions = {scope: "profile payments:widget payments:shipping_address", popup: true};
+			authRequest = amazon.Login.authorize (loginOptions, "{{ path('shopping') }}");
+		},
+		onError: function(error) {
+			// your error handling code.
+			alert("The following error occurred: "
+			 + error.getErrorCode()
+			 + ' - ' + error.getErrorMessage());
+		}
+	});
+</script>

@@ -1,0 +1,6 @@
+Cart/index.twig:
+    - [onCartIndexRender, NORMAL]
+eccube.event.route.shopping.request:
+    - [onRouteShoppingRequest, NORMAL]
+Shopping/index.twig:
+    - [onShoppingIndexRender,NORMAL]

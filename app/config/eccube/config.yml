@@ -1,0 +1,13 @@
+auth_magic: droucliuijeanamiundpnoufrouphudrastiokec
+password_hash_algos: sha256
+shop_name: EC-CUBE SHOP
+force_ssl: 0
+admin_allow_host:
+cookie_lifetime: 0
+cookie_name: eccube
+locale: ja
+timezone: Asia/Tokyo
+pageinrange: false
+trusted_proxies_connection_only: false
+trusted_proxies: {  }
+eccube_install: 1

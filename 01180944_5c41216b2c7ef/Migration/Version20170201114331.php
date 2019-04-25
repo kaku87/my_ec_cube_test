@@ -1,0 +1,2 @@
+<?php
+ namespace DoctrineMigrations; use Doctrine\DBAL\Migrations\AbstractMigration; use Doctrine\DBAL\Schema\Schema; use Symfony\Component\Yaml\Yaml; class Version20170201114331 extends AbstractMigration { public function up(Schema $schema) { $this->updatePluginName(); } public function down(Schema $schema) { } public function updatePluginName() { $update = "UPDATE dtb_plugin SET name ='AmazonPay' WHERE name = 'Amazonログイン&ペイメント';"; $this->connection->executeUpdate($update); } } 

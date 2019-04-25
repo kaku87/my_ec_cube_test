@@ -1,0 +1,93 @@
+{#
+AmazonPayments for EC-CUBE3
+Copyright(c) 2016 IPLOGIC CO.,LTD. All Rights Reserved.
+
+http://www.iplogic.co.jp/
+
+This program is not free software.
+It applies to terms of service.
+#}
+{% block javascript %}
+<script>
+var amazon_submit_flag = false;
+
+$(document).ready(function() {
+    $('#shopping-form').submit(function() {
+        if (amazon_submit_flag == false) {
+            alert('お支払方法が確定していません。');
+            return;
+        }
+    })
+})
+</script>
+
+<script>
+var accessToken = "{{ amazonSettings.addressConsentToken }}";
+
+document.cookie = "amazon_Login_accessToken=" + accessToken + ";path=/;secure";
+window.onAmazonLoginReady = function() { amazon.Login.setClientId("{{ amazonSettings.client_id }}"); amazon.Login.setUseCookie(true); };
+</script>
+<script type="text/javascript" src="{{ amazonSettings.widget_url }}"></script>
+<script>
+    {% if first_load_flg == true %}
+        var click_count = 1;
+    {% else %}
+        var click_count = 0;
+    {% endif %}
+
+    function redirect() {
+        if (click_count >= 2) {
+            overlay = $('&lt;div class=&quot;prevention-masked&quot;&gt;');
+            $('body').append(overlay);
+            $('#shopping-form').attr('action', '{{ url("amazon_shopping_address") }}').submit();
+        }
+    }
+
+    var amazonOrderReferenceId;
+    new OffAmazonPayments.Widgets.AddressBook({
+        sellerId: "{{ amazonSettings.seller_id}}",
+        design: {
+            size : {width:"{{ amazonSettings.deliv_widget_width }}px", height:"{{ amazonSettings.deliv_widget_height }}px"}
+        },
+        onOrderReferenceCreate: function(orderReference) {
+            amazonOrderReferenceId = orderReference.getAmazonOrderReferenceId();
+            $("#amazonOrderReferenceId").val(amazonOrderReferenceId);
+
+            new OffAmazonPayments.Widgets.Wallet({
+                sellerId: "{{ amazonSettings.seller_id }}",
+                design: {
+                    size : {width:"{{ amazonSettings.payment_widget_width }}px", height:"{{ amazonSettings.payment_widget_height }}px"}
+                },
+                onPaymentSelect: function(orderReference) {
+                    amazon_submit_flag = true;
+                },
+                onError: function(error) {
+                    alert("通信中にエラーが発生しました。カート画面に移動します。");
+                    overlay = $('&lt;div class=&quot;prevention-masked&quot;&gt;');
+                    $('body').append(overlay);
+                    location.href = "{{ url('cart') }}";
+                }
+            }).bind("walletWidgetDiv");
+        },
+        onAddressSelect: function(orderReference) {
+            click_count++;
+            amazon_submit_flag = true;
+            redirect();
+        },
+        onError: function(error) {
+            alert("通信中にエラーが発生しました。カート画面に移動します。");
+            overlay = $('&lt;div class=&quot;prevention-masked&quot;&gt;');
+            $('body').append(overlay);
+            location.href = "{{ url('cart') }}";
+        }
+    }).bind("addressBookWidgetDiv");
+</script>
+{% endblock %}
+<link rel="stylesheet" href="{{ app.config.user_data_urlpath }}/AmazonPayments/css/amazon_shopping.css" />
+
+<input type="hidden" name="amazonOrderReferenceId" id="amazonOrderReferenceId" value="" />
+<input type="hidden" name="addressConsentToken" value="{{ amazonSettings.addressConsentToken }}" />
+
+<h2 class="heading02">配送情報・お支払方法</h2>
+<div id="addressBookWidgetDiv"></div>
+<div id="walletWidgetDiv"></div>

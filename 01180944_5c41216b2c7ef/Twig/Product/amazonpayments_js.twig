@@ -1,0 +1,73 @@
+{#
+AmazonPayments for EC-CUBE3
+Copyright(c) 2016 IPLOGIC CO.,LTD. All Rights Reserved.
+
+http://www.iplogic.co.jp/
+
+This program is not free software.
+It applies to terms of service.
+#}
+{% block javascript %}
+<script>
+window.onAmazonLoginReady = function() { amazon.Login.setClientId('{{ amazonSettings.client_id }}'); };
+</script>
+<script src="{{ amazonSettings.widget_url }}"></script>
+<script>
+    var $form = $('#form1');
+    var product_id = "{{ Product.id }}";
+    var classcategory_id1 = '';
+    var classcategory_id2 = '';
+    var quantity = 1;
+    var authRequest;
+
+    OffAmazonPayments.Button("AmazonPayButton", "{{ amazonSettings.seller_id }}", {
+        type: "PwA",
+        size: "{{ amazonSettings.products_button_size }}",
+        color: "{{ amazonSettings.products_button_color }}",
+        authorization: function() {
+            // 規格1の選択チェック
+            {% if Product.className1 is not empty %}
+                classcategory_id1 = $form.find('select[name=classcategory_id1]').val();
+                if (isNaN(classcategory_id1) || classcategory_id1 == '') {
+                    alert("{{ Product.className1 }}が選択されていません。");
+                    return;
+                } else {
+                    // 規格2の選択チェック
+                    {% if Product.className2 is not empty %}
+                        classcategory_id2 = $form.find('select[name=classcategory_id2]').val();
+                        if (isNaN(classcategory_id2) || classcategory_id2 == '') {
+                            alert("{{ Product.className2 }}が選択されていません。");
+                            return;
+                        }
+                    {% endif %}
+                }
+            {% endif %}
+
+            // 数量の入力チェック
+            quantity = $form.find('input[name=quantity]').val();
+            if (quantity == '') {
+                alert("数量が入力されていません。");
+                return;
+            } else {
+                if (isNaN(quantity) || quantity.match(' ') || quantity.match('　')) {
+                    alert("数量は数字で入力してください。");
+                    return;
+                } else if (1 > quantity) {
+                    alert("数量は1以上の数字を入力してください。");
+                    return;
+                } else if (quantity - Math.floor(quantity) > 0) {
+                    alert("数量は整数で入力してください。");
+                    return;
+                }
+            }
+            var data = ["product_id=" + product_id, "classcategory_id1=" + classcategory_id1, "classcategory_id2=" + classcategory_id2, "quantity=" + quantity];
+            loginOptions = {scope: "profile payments:widget payments:shipping_address", popup: false, state: data};
+            authRequest = amazon.Login.authorize(loginOptions, "{{ url('homepage') }}amazon_redirect.html");
+        },
+        onError: function(error) {
+            alert('通信中にエラーが発生しました。カート画面に移動します。');
+            location.href = "{{ url('cart') }}";
+        }
+    });
+</script>
+{% endblock %}

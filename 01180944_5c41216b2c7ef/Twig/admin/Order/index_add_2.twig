@@ -1,0 +1,45 @@
+{#
+AmazonPayments for EC-CUBE3
+Copyright(c) 2016 IPLOGIC CO.,LTD. All Rights Reserved.
+
+http://www.iplogic.co.jp/
+
+This program is not free software.
+It applies to terms of service.
+#}
+<td>
+    {% if AmazonDisp.reference_code is not null %}
+    <a href="{{ app.config.AmazonPayments.const.AMAZON_SC_URL}}{{ AmazonDisp.reference_code }}" target="_blank">{{ AmazonDisp.reference_code }}</a><br/>{{ AmazonDisp.amazon_status }}
+    {% else %}
+        -
+    {% endif %}
+</td>
+<td>
+    {% if AmazonDisp.capture == 0 %}
+        -
+    {% elseif AmazonDisp.capture == 1 %}
+        <span class="text-danger">金額超過</span>
+    {% elseif AmazonDisp.capture == 2 %}
+        <a href="?" id="amazon_capture_link_{{ AmazonDisp.order_id }}">金額変更</a><br/>
+        <span style="color:#0000FF;">-{{ AmazonDisp.diff_amount }}円</span>
+    {% elseif AmazonDisp.capture == 3 %}
+        <a href="" id="amazon_capture_link_{{ AmazonDisp.order_id }}">金額変更</a><br/>
+        <span style="color:#FF0000;">+{{ AmazonDisp.diff_amount }}円</span>
+    {% elseif AmazonDisp.capture == 4 %}
+        <input type="checkbox" name="amazon_capture_id[]" id="amazon_capture_check_{{ AmazonDisp.order_id }}" value="{{ AmazonDisp.order_id }}"/><label for="amazon_capture_check_{{ AmazonDisp.order_id }}">一括</label><br/>
+        <a href="" id="amazon_capture_link_{{ AmazonDisp.order_id }}">個別売上</a>
+    {% endif %}
+</td>
+<td>
+    {% if AmazonDisp.cancel == 0 %}
+        -
+    {% elseif AmazonDisp.cancel == 1 %}
+        <span class="text-danger">金額超過</span>
+    {% elseif AmazonDisp.cancel == 2 %}
+        <a href="?" id="amazon_cancel_link_{{ AmazonDisp.order_id }}">金額変更</a><br/>
+        <span style="color:#0000FF;">-{{ AmazonDisp.diff_amount }}円</span>
+    {% elseif AmazonDisp.cancel == 3 %}
+        <input type="checkbox" name="amazon_cancel_id[]" id="amazon_cancel_check_{{ AmazonDisp.order_id }}" value="{{ AmazonDisp.order_id }}"/><label for="amazon_cancel_check_{{ AmazonDisp.order_id }}">一括</label><br/>
+        <a href="" id="amazon_cancel_link_{{ AmazonDisp.order_id }}">個別取消</a>
+    {% endif %}
+</td>

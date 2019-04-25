@@ -1,0 +1,29 @@
+eccube.event.render.product_detail.before:
+    - [onRenderProductDetailBefore, NORMAL]
+eccube.event.render.cart.before:
+    - [onRenderCartBefore, NORMAL]
+eccube.event.render.amazon_shopping.before:
+    - [AmazonShoppingRender, NORMAL]
+eccube.event.render.amazon_shopping_address.before:
+    - [AmazonShoppingRender, NORMAL]
+eccube.event.render.amazon_shopping_delivery.before:
+    - [AmazonShoppingRender, NORMAL]
+eccube.event.render.amazon_shopping_confirm.before:
+    - [AmazonShoppingRender, NORMAL]
+eccube.event.render.admin_order.before:
+    - [AdminAmazonOrderRender, NORMAL]
+eccube.event.render.admin_order_page.before:
+    - [AdminAmazonOrderRender, NORMAL]
+
+eccube.event.controller.shopping.before:
+    - [onControllerShoppingBefore, NORMAL]
+eccube.event.controller.shopping_delivery.before:
+    - [onControllerShoppingDeliveryBefore, NORMAL]
+eccube.event.controller.shopping_confirm.before:
+    - [onControllerShoppingConfirmBefore, NORMAL]
+eccube.event.controller.shopping_customer.before:
+    - [onControllerShoppingCustomerBefore, NORMAL]
+eccube.event.controller.admin_order.before:
+    - [onControllerAdminOrderIndexBefore, NORMAL]
+eccube.event.controller.admin_order_page.before:
+    - [onControllerAdminOrderIndexBefore, NORMAL]

@@ -1,0 +1,8 @@
+name: LineLoginIntegration
+event: LineLoginIntegrationEvent
+code: LineLoginIntegration
+version: 1.0.0
+service:
+    - LineLoginIntegrationServiceProvider
+orm.path:
+    - /Resource/doctrine

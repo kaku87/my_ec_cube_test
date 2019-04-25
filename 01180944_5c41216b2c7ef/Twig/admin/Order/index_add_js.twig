@@ -1,0 +1,99 @@
+{#
+AmazonPayments for EC-CUBE3
+Copyright(c) 2016 IPLOGIC CO.,LTD. All Rights Reserved.
+
+http://www.iplogic.co.jp/
+
+This program is not free software.
+It applies to terms of service.
+#}
+{% block javascript %}
+<script>
+
+$('#amazon_capture_all_check').click(function() {
+    var amazon_checkall = $('#amazon_capture_all_check').prop('checked');
+    if (amazon_checkall) {
+        $('input[id^=amazon_capture_check_]').prop('checked', true);
+    } else {
+        $('input[id^=amazon_capture_check_]').prop('checked', false);
+    }
+});
+
+$('#amazon_cancel_all_check').click(function() {
+    var amazon_checkall = $('#amazon_cancel_all_check').prop('checked');
+    if (amazon_checkall) {
+        $('input[id^=amazon_cancel_check_]').prop('checked', true);
+    } else {
+        $('input[id^=amazon_cancel_check_]').prop('checked', false);
+    }
+});
+
+$('[id^=amazon_capture_link_]').click(function(event) {
+    event.preventDefault();
+    var href = $(this).attr('href');
+    var id = $(this).attr('id');
+    var order_id = id.slice(id.lastIndexOf('_') + 1);
+
+    if (confirm('売上処理を実行します。よろしいですか？')) {
+        $('#amazon_order_id').val(order_id);
+        $('#amazon_request').val('amazon_capture');
+        $('#dropdown-form').attr('action', href).submit();
+    }
+});
+
+$('[id^=amazon_cancel_link_]').click(function(event) {
+    event.preventDefault();
+    var href = $(this).attr('href');
+    var id = $(this).attr('id');
+    var order_id = id.slice(id.lastIndexOf('_') + 1);
+
+    if (confirm('取消処理を実行します。よろしいですか？')) {
+        $('#amazon_order_id').val(order_id);
+        $('#amazon_request').val('amazon_cancel');
+        $('#dropdown-form').attr('action', href).submit();
+    }
+});
+
+$('#amazon_capture_button').click(function(event) {
+    event.preventDefault();
+    var href = $(this).attr('href');
+    var isChecked = false;
+    $('input[id^=amazon_capture_check_]').each(function() {
+        var check = $(this).prop('checked');
+        if (check) {
+            isChecked = true;
+        }
+    });
+    if (!isChecked) {
+        alert("チェックボックスが選択されていません");
+        return false;
+    }
+    if (confirm('売上処理を実行します。よろしいですか？')) {
+        $('#amazon_request').val('amazon_capture');
+        $('#dropdown-form').attr('action', href).submit();
+    }
+});
+
+$('#amazon_cancel_button').click(function(event) {
+    event.preventDefault();
+    var href = $(this).attr('href');
+    var isChecked = false;
+    $('input[id^=amazon_cancel_check_]').each(function() {
+        var check = $(this).prop('checked');
+        if (check) {
+            isChecked = true;
+        }
+    });
+    if (!isChecked) {
+        alert("チェックボックスが選択されていません");
+        return false;
+    }
+    if (confirm('取消処理を実行します。よろしいですか？')) {
+        $('#amazon_request').val('amazon_cancel');
+        $('#dropdown-form').attr('action', href).submit();
+    }
+});
+</script>
+{% endblock %}
+<input type="hidden" name="amazon_request" id="amazon_request" value="" />
+<input type="hidden" name="amazon_order_id" id="amazon_order_id" value="" />

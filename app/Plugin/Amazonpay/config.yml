@@ -1,0 +1,6 @@
+name: amazonpay
+code: Amazonpay
+version: 0.0.1
+event: AmazonpayEvent
+service:
+    - AmazonpayServiceProvider

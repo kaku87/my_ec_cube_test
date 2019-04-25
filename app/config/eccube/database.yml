@@ -1,0 +1,9 @@
+database:
+    driver: 'pdo_mysql'
+    host: '0.0.0.0'
+    dbname: 'c9'
+    port: '3306'
+    user: 'kaku'
+    password : ''
+    charset: utf8
+    defaultTableOptions: { collate: utf8_general_ci }

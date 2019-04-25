@@ -1,0 +1,42 @@
+{#
+AmazonPayments for EC-CUBE3
+Copyright(c) 2016 IPLOGIC CO.,LTD. All Rights Reserved.
+
+http://www.iplogic.co.jp/
+
+This program is not free software.
+It applies to terms of service.
+#}
+{% extends 'default_frame.twig' %}
+
+{% block title %}Amazon Payプラグイン{% endblock %}
+{% block sub_title %}キー設定確認{% endblock %}
+
+{% block javascript %}
+<script>
+window.onAmazonLoginReady = function() { amazon.Login.setClientId("{{ amazonSettings.client_id }}"); };
+</script>
+<script src="{{ amazonSettings.widget_url }}"></script>
+<script>
+    var authRequest;
+    OffAmazonPayments.Button("AmazonPayButton", "{{ amazonSettings.seller_id }}", {
+        type: "PwA",
+        size: "{{ amazonSettings.cart_button_size }}",
+        color: "{{ amazonSettings.cart_button_color }}",
+        authorization: function() {
+            loginOptions = {scope: "profile payments:widget payments:shipping_address", popup: true};
+            authRequest = amazon.Login.authorize (loginOptions, "{{ url('admin_homepage') }}plugin/AmazonPayments/config/widget");
+        },
+        onError: function(error) {
+            alert('通信中にエラーが発生しました。カート画面に移動します。');
+            location.href = "{{ url('cart') }}";
+        }
+    });
+</script>
+{% endblock %}
+
+{% block main %}
+
+<p id="AmazonPayButton"></p>
+
+{% endblock %}

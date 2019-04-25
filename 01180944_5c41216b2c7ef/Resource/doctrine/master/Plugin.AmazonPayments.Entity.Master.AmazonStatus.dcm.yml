@@ -1,0 +1,19 @@
+Plugin\AmazonPayments\Entity\Master\AmazonStatus:
+    type: entity
+    table: plg_amazonpayments_status
+    repositoryClass: Plugin\AmazonPayments\Repository\Master\AmazonStatusRepository
+    id:
+        id:
+            type: smallint
+            nullable: false
+            unsigned: false
+            id: true
+    fields:
+        name:
+            type: text
+            nullable: true
+        rank:
+            type: smallint
+            nullable: false
+            unsigned: false
+    lifecycleCallbacks: {  }

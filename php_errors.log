@@ -1,0 +1,331 @@
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP Notice:  Undefined index: event in /home/ubuntu/workspace/src/Eccube/Application.php on line 929
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP   2. Eccube\Application->initializePlugin() /home/ubuntu/workspace/html/index.php:53
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP   3. Eccube\Application->loadPlugin() /home/ubuntu/workspace/src/Eccube/Application.php:644
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/src/Eccube/Application.php on line 929
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP   2. Eccube\Application->initializePlugin() /home/ubuntu/workspace/html/index.php:53
+[18-Jan-2019 16:43:20 Asia/Tokyo] PHP   3. Eccube\Application->loadPlugin() /home/ubuntu/workspace/src/Eccube/Application.php:644
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP Notice:  Undefined index: event in /home/ubuntu/workspace/src/Eccube/Application.php on line 929
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP   2. Eccube\Application->initializePlugin() /home/ubuntu/workspace/html/index.php:53
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP   3. Eccube\Application->loadPlugin() /home/ubuntu/workspace/src/Eccube/Application.php:644
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/src/Eccube/Application.php on line 929
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP   2. Eccube\Application->initializePlugin() /home/ubuntu/workspace/html/index.php:53
+[18-Jan-2019 16:57:28 Asia/Tokyo] PHP   3. Eccube\Application->loadPlugin() /home/ubuntu/workspace/src/Eccube/Application.php:644
+[18-Jan-2019 17:14:05 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/ubuntu/workspace/app/cache/plugin/config_cache.php on line 72
+[18-Jan-2019 17:14:05 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 17:14:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 17:14:05 Asia/Tokyo] PHP   2. Eccube\Application->initialize() /home/ubuntu/workspace/html/index.php:52
+[18-Jan-2019 17:14:05 Asia/Tokyo] PHP   3. Eccube\Application->initDoctrine() /home/ubuntu/workspace/src/Eccube/Application.php:179
+[18-Jan-2019 17:14:05 Asia/Tokyo] PHP   4. Eccube\Application->getPluginConfigAll() /home/ubuntu/workspace/src/Eccube/Application.php:431
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP Fatal error:  Call to undefined method Eccube\Event\EventArgs::getSource() in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 34
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   8. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:51
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP  10. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[18-Jan-2019 17:23:26 Asia/Tokyo] PHP  11. Plugin\Amazonpay\AmazonpayEvent->onFrontCartIndexInitialize() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP Fatal error:  Call to undefined method Eccube\Event\EventArgs::getSource() in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 34
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   8. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:51
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP  10. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[18-Jan-2019 17:24:10 Asia/Tokyo] PHP  11. Plugin\Amazonpay\AmazonpayEvent->onFrontCartIndexInitialize() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP Fatal error:  Call to undefined method Eccube\Event\EventArgs::getSource() in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 34
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP Stack trace:
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   8. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:51
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP  10. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[18-Jan-2019 17:30:38 Asia/Tokyo] PHP  11. Plugin\Amazonpay\AmazonpayEvent->onFrontCartIndexInitialize() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:28:18 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:28:42 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:29:04 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:29:15 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:29:20 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:29:32 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:29:35 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:30:08 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:30:17 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:30:32 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:33:01 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:33:18 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:33:34 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:33:37 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Identifier "security.authentication_providers" is not defined.' in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php:78
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(117): Pimple->offsetGet('security.authen...')
+#1 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#2 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application))
+#3 /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Provider/SecurityServiceProvider.php(82): Pimple->offsetGet('security.authen...')
+#4 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(126): Silex\Provider\SecurityServiceProvider->Silex\Provider\{closure}(Object(Eccube\Application))
+#5 /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php(83): Pimple::{closure}(Object(Eccube\Application)) in /home/ubuntu/workspace/vendor/pimple/pimple/lib/Pimple.php on line 78
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:34:04 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:34:20 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:34:55 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:35:17 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:37:41 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:37:52 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:41:26 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:42:22 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:42:58 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:43:10 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP Fatal error:  Class 'Plugin\Amazonpay\Client' not found in /home/ubuntu/workspace/app/Plugin/Amazonpay/AmazonpayEvent.php on line 55
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP Stack trace:
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/html/index.php:0
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   2. Silex\Application->run() /home/ubuntu/workspace/html/index.php:57
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   3. Silex\Application->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:563
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/vendor/silex/silex/src/Silex/Application.php:586
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:64
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   6. call_user_func_array:{/home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144}() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   7. Eccube\Controller\CartController->index() /home/ubuntu/workspace/vendor/symfony/http-kernel/HttpKernel.php:144
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   8. Eccube\Application\ApplicationTrait->render() /home/ubuntu/workspace/src/Eccube/Controller/CartController.php:97
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP   9. Symfony\Component\EventDispatcher\EventDispatcher->dispatch() /home/ubuntu/workspace/src/Eccube/Application/ApplicationTrait.php:241
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP  10. Symfony\Component\EventDispatcher\EventDispatcher->doDispatch() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:46
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP  11. call_user_func:{/home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161}() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161
+[21-Apr-2019 23:43:16 Asia/Tokyo] PHP  12. Plugin\Amazonpay\AmazonpayEvent->onCartIndexRender() /home/ubuntu/workspace/vendor/symfony/event-dispatcher/EventDispatcher.php:161

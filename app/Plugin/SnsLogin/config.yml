@@ -1,0 +1,6 @@
+name: SNSログイン
+code: SnsLogin
+version: 1.0.0
+event: SnsLoginEvent
+service:
+    - SnsLoginServiceProvider

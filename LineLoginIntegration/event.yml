@@ -1,0 +1,9 @@
+Mypage/login.twig:
+ - [onRenderLineLoginButton, NORMAL]
+Entry/index.twig:
+ - [onRenderLineEntryButton, NORMAL]
+ - [onRenderEntryIndex, NORMAL]
+front.entry.index.complete:
+ - [onCompleteEntry, NORMAL]
+front.mypage.withdraw.index.complete:
+ - [onCompleteMypageWithdraw, NORMAL]

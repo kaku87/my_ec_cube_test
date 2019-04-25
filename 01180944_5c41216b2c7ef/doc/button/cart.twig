@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="{{ app.config.user_data_urlpath }}/AmazonPayments/css/amazon_button_cart.css" />
+<div id="total_box__user_action_menu" class="btn_group">
+    <div class="btn_box0622 mt50">
+        <div class="bb">
+            <div class="clearfix">
+                <div class="left">
+                    <p class="ttl">商品を購入する</p>
+                </div>
+                <div class="right">
+                    <p id="total_box__next_button" >
+                        <a href="{{ path('cart_buystep') }}" class="btn btn-primary btn-block">ご購入手続きに進む</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="center or20170703"><p>or</p></div>
+        <div class="clearfix">
+            <div class="left">
+                <p class="ttl2">Amazonアカウントでも決済できます</p>
+                <p class="text2">Amazon.co.jpにご登録の住所・クレジットカードで簡単にお支払いができます。</p>
+            </div>
+            <div class="right2">
+                <p id="AmazonPayButton"></p>
+            </div>
+        </div>
+    </div>
+    <div class="back0622">
+        <p id="total_box__top_button">
+            <a  href="{{ url('top') }}" class="btn btn-info btn-block">お買い物を続ける</a>
+        </p>
+    </div>
+</div>

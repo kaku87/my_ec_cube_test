@@ -1,0 +1,4 @@
+Mypage/login.twig:
+ - [onRenderLineLoginButton, NORMAL]
+front.mypage.mypage.login.initialize:
+ - [onFrontMypageMypageLoginInitialize, NORMAL]

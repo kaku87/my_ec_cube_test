@@ -1,0 +1,96 @@
+{#
+AmazonPayments for EC-CUBE3
+Copyright(c) 2016 IPLOGIC CO.,LTD. All Rights Reserved.
+
+http://www.iplogic.co.jp/
+
+This program is not free software.
+It applies to terms of service.
+#}
+{% block main %}
+    {% if amazonSettings.login_required == 1 %}
+        <dl>
+            <dd>
+                <div {% if form.login_check.vars.errors is not empty %}class="has-error"{% endif %}>
+                    <input id="amazon_shopping_login_check_0" type="radio" name="amazon_shopping[login_check]" value="0" {% if login_check == 0 %}checked="checked" {% endif %}/>
+                    <label for="amazon_shopping_login_check_0"><h3 style="display:inline;">まだ会員登録されていないお客様</h3></label>
+                </div>
+            </dd>
+        </dl>
+    {% else %}
+        <input type="hidden" name="amazon_shopping[login_check]" value="0"/>
+    {% endif %}
+    <dl>
+        <dd>
+            {{ form_errors(form.login_check) }}
+            {{ form_errors(form.customer_regist) }}
+            {{ form_errors(form.mail_magazine) }}
+        </dd>
+    </dl>
+    <dl>
+        <dd>
+            <div {% if form.customer_regist.vars.errors is not empty %}class="has-error"{% endif %}>
+                {{ form_widget(form.customer_regist) }}
+            </div>
+            <a href="{{ url('help_agreement') }}" target="blank">※ご利用規約(必ずお読みください)</a>
+        </dd>
+    </dl>
+    {% if mailmaga_flg %}
+        <dl>
+            <dd>お買い得情報や最新情報をメールでお届けします。</dd>
+        </dl>
+        <dl>
+            <div {% if form.mail_magazine.vars.errors is not empty %}class="has-error"{% endif %}>
+                {{ form_widget(form.mail_magazine) }}
+            </div>
+        </dl>
+    {% endif %}
+
+    {% if amazonSettings.login_required == 1 %}
+        <br/>
+        <dl>
+            <dd>
+                <div {% if form.login_check.vars.errors is not empty %}class="has-error"{% endif %}>
+                    <input id="amazon_shopping_login_check_1" type="radio" name="amazon_shopping[login_check]" value="1" {% if login_check == 1 %}checked="checked" {% endif %} />
+                    <label for="amazon_shopping_login_check_1"><h3 style="display:inline;">会員登録がお済みのお客様</h3></label>
+                </div>
+            </dd>
+        </dl>
+        <dl>
+            <dd>
+                {{ form_errors(form.amazon_login_email) }}
+                {{ form_errors(form.amazon_login_password) }}
+            </dd>
+        </dl>
+        <dl>
+            <dd>メールアドレス</dd>
+        </dl>
+        <dl>
+            <div {% if form.amazon_login_email.vars.errors is not empty %}class="has-error"{% endif %}>
+                {{ form_widget(form.amazon_login_email) }}
+
+            </div>
+        </dl>
+        <dl>
+            <dd>パスワード</dd>
+        </dl>
+        <dl>
+            <div {% if form.amazon_login_password.vars.errors is not empty %}class="has-error"{% endif %}>
+                {{ form_widget(form.amazon_login_password) }}
+            </div>
+        </dl>
+    {% endif %}
+{% endblock %}
+
+{% block  javascript %}
+<script>
+    $("#amazon_shopping_customer_regist_0").click(function(){
+        if ($("#amazon_shopping_customer_regist_0").prop('checked')) {
+            $("#amazon_shopping_mail_magazine_0").attr("disabled", false);
+        } else {
+            $("#amazon_shopping_mail_magazine_0").attr("disabled", true);
+            $("#amazon_shopping_mail_magazine_0").attr("checked", false);
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,392 @@
+{#
+AmazonPayments for EC-CUBE3
+Copyright(c) 2016 IPLOGIC CO.,LTD. All Rights Reserved.
+
+http://www.iplogic.co.jp/
+
+This program is not free software.
+It applies to terms of service.
+#}
+{% extends 'default_frame.twig' %}
+
+{% block title %}AmazonPay 設定画面{% endblock %}
+
+{% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block javascript %}
+<script>
+    $(function() {
+        change_form_disp();
+
+        $('#config_amazon_account_mode').click(function() {
+            change_form_disp();
+        });
+
+        $("#parameter_confirm").click(function () {
+            var params = {
+                mode : 'check',
+            }
+            var esc = encodeURIComponent;
+            var query = Object.keys(params).map(k => esc(k) + '=' + esc(params[k])).join('&');
+            window.open('config/check');
+        })
+
+    });
+
+    function change_form_disp() {
+        if ($("#config_amazon_account_mode_0").prop('checked')) {
+            $('.prod').hide();
+            $('.test').show();
+        } else {
+            $('.prod').show();
+            $('.test').hide();
+        }
+    }
+
+    $("#config_button_select_0").click(function(){
+        if ($("#config_button_select_0").prop('checked')) {
+            $("#button_select_cart").css("display", "block");
+        } else {
+            $("#button_select_cart").css("display", "none");
+        }
+    });
+    
+    $("#config_button_select_0").click(function(){
+        if ($("#config_button_select_0").prop('checked')) {
+            $("#button_select_cart").css("display", "block");
+        } else {
+            $("#button_select_cart").css("display", "none");
+        }
+    });
+
+    $("#config_button_select_1").click(function(){
+        if ($("#config_button_select_1").prop('checked')) {
+            $("#button_select_products").css("display", "block");
+        } else {
+            $("#button_select_products").css("display", "none");
+        }
+    });
+
+    $("#config_products_button_place").click(function(){
+        if ($("#config_products_button_place_0").prop('checked')) {
+            $("#button_code_products").css("display", "none");
+        } else {
+            $("#button_code_products").css("display", "block");
+        }
+    });
+
+    $("#config_cart_button_place").click(function(){
+        if ($("#config_cart_button_place_0").prop('checked')) {
+            $("#button_code_cart").css("display", "none");
+        } else {
+            $("#button_code_cart").css("display", "block");
+        }
+    });
+</script>
+{% endblock %}
+{% block main %}
+
+    <div class="row" id="aside_wrap">
+        <form name="form1" role="form" novalidate class="form-horizontal" id="point_form" method="post" action="">
+            {{ form_widget(form._token) }}
+            <div class="col-md-9">
+                <div class="box">
+                    <div class="box-body">
+                        ■テスト環境利用について<br/>
+                        いますぐにテスト環境での利用が可能です。<br/>
+                        利用方法は「<a href="https://www.iplogic.co.jp/amazondoc/installtest3.pdf" target="_brank">テストインストールマニュアル</a>」をご確認ください。<br/>
+                        <br/>
+                        ■本番環境利用について<br/>
+                        アイピーロジック株式会社、アマゾンジャパン合同会社様、両社との契約が必要となります。<br/>
+                        詳細情報をご案内いたしますので、以下のフォームより「本番環境申し込み」をお願いいたします。<br/>
+                        <a href="https://www.iplogic.co.jp/lp/amazonpayments.html#aform" target="_brank">https://www.iplogic.co.jp/lp/amazonpayments.html</a><br/>
+                        <br/>
+                        ■各種マニュアルについて<br/>
+                        それぞれこちらのリンクよりダウンロードしてください。<br/>
+                        ・<a href="https://www.iplogic.co.jp/amazondoc/introduce3.pdf" target="_brank">Amazon Payプラグインのご紹介</a><br/>
+                        ・<a href="https://www.iplogic.co.jp/amazondoc/install3.pdf" target="_brank">本番環境切り替えマニュアル</a><br/>
+                        ・<a href="https://www.iplogic.co.jp/amazondoc/operation3.pdf" target="_brank">オペレーションマニュアル</a><br/>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">キー設定</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">アカウント切り替え <span class="text-danger small">必須</span></label>
+                            <div class="col-sm-10 {% if form.amazon_account_mode.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.amazon_account_mode) }}
+                                {{ form_errors(form.amazon_account_mode) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">環境切り替え <span class="text-danger small">必須</span></label>
+                            <div class="prod col-sm-10 {% if form.prod_mode.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.prod_mode) }}
+                                {{ form_errors(form.prod_mode) }}
+                            </div>
+                            <span class="test col-sm-10 control-label">テスト環境</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">出品者ID <span class="text-danger small prod">必須</span></label>
+                            <div class="prod col-sm-10 {% if form.seller_id.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.seller_id) }}
+                                {{ form_errors(form.seller_id) }}
+                            </div>
+                        <span class="test col-sm-10 control-label">{{ app.config.AmazonPayments.const.TEST_SELLER_ID}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">アクセスキー <span class="text-danger small prod">必須</span></label>
+                            <div class="prod col-sm-10 {% if form.mws_access_key_id.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.mws_access_key_id) }}
+                                {{ form_errors(form.mws_access_key_id) }}
+                            </div>
+                            <span class="test col-sm-10 control-label">{{ app.config.AmazonPayments.const.TEST_MWS_ACCESS_KEY_ID }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">シークレットアクセスキー <span class="text-danger small prod">必須</span></label>
+                            <div class="prod col-sm-10 {% if form.mws_secret_access_key.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.mws_secret_access_key) }}
+                                {{ form_errors(form.mws_secret_access_key) }}
+                            </div>
+                            <span class="test col-sm-10 control-label">{{ app.config.AmazonPayments.const.TEST_MWS_SECRET_ACCESS_KEY }}</span>
+                        </div>
+                        <div class="prod form-group">
+                            <label class="col-sm-2 control-label required">クライアントID <span class="text-danger small">必須</span></label>
+                            <div class="col-sm-10 {% if form.client_id.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.client_id) }}
+                                {{ form_errors(form.client_id) }}
+                            </div>
+                        </div>
+                        <div class="test form-group">
+                            <label class="col-sm-2 control-label required">テスト用クライアントID <span class="text-danger small">必須</span></label>
+                            <div class="col-sm-10 {% if form.test_client_id.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.test_client_id) }}
+                                {{ form_errors(form.test_client_id) }}
+                            </div>
+                        </div>
+                        <div class="prod form-group">
+                            <label class="col-sm-2 control-label required">本番環境切り替えキー</label>
+                            <div class="col-sm-10 {% if form.prod_key.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.prod_key) }}
+                                {{ form_errors(form.prod_key) }}
+                            </div>
+                        </div>
+                        
+                        <span class="prod text-danger small">※本番環境への切り替えにはアイピーロジック契約時に発行されるキーが必要です。</span>
+                    </div>
+                </div>
+                
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">動作設定</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group"
+                             {% if form.sale.vars.errors is not empty %}has-error{% endif %}>
+                            <label class="col-sm-2 control-label required">仮売上 or 売上 <span class="text-danger small">必須</span></label>
+
+                            <div class="col-sm-10 {% if form.sale.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.sale) }}
+                                {{ form_errors(form.sale) }}
+                            </div>
+                        </div>
+                        <div class="form-group"
+                             {% if form.auto_login.vars.errors is not empty %}has-error{% endif %}>
+                            <label class="col-sm-2 control-label required">EC自動ログイン <span class="text-danger small">必須</span></label>
+
+                            <div class="col-sm-10 {% if form.auto_login.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.auto_login) }}
+                                {{ form_errors(form.auto_login) }}
+                            </div>
+                        </div>
+                        <div class="form-group"
+                             {% if form.login_required.vars.errors is not empty %}has-error{% endif %}>
+                            <label class="col-sm-2 control-label required">ログイン・会員登録必須 <span class="text-danger small">必須</span></label>
+
+                            <div class="col-sm-10 {% if form.login_required.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.login_required) }}
+                                {{ form_errors(form.login_required) }}
+                            </div>
+                        </div>
+                        <div class="form-group"
+                             {% if form.order_revise.vars.errors is not empty %}has-error{% endif %}>
+                            <label class="col-sm-2 control-label required">受注補正機能 <span class="text-danger small">必須</span></label>
+
+                            <div class="col-sm-10 {% if form.order_revise.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.order_revise) }}
+                                {{ form_errors(form.order_revise) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">受注完了メール特記事項</label>
+                            <div class="col-sm-10 {% if form.mail_text.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.mail_text) }}
+                                {{ form_errors(form.mail_text) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">ボタン設定</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group"
+                             {% if form.button_select.vars.errors is not empty %}has-error{% endif %}>
+                            <label class="col-sm-2 control-label required">Amazonログインボタン選択</label>
+
+                            <div class="col-sm-10 {% if form.button_select.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.button_select) }}
+                                {{ form_errors(form.button_select) }}
+                            </div>
+                        </div>
+                        <div id="button_select_cart" {% if 'cart' not in form.button_select.vars.value %}style="display:none;"{% endif %}>
+                            <h4>▼カート画面ボタン設定</h4>
+                            <div class="form-group"
+                                 {% if form.cart_button_color.vars.errors is not empty %}has-error{% endif %}>
+                                <label class="col-sm-2 control-label required">Amazonログインボタンカラー <span class="text-danger small">必須</span></label>
+
+                                <div class="col-sm-10 {% if form.cart_button_color.vars.errors is not empty %}has-error{% endif %}">
+                                    {{ form_widget(form.cart_button_color) }}
+                                    {{ form_errors(form.cart_button_color) }}
+                                </div>
+                            </div>
+                            <div class="form-group"
+                                 {% if form.cart_button_size.vars.errors is not empty %}has-error{% endif %}>
+                                <label class="col-sm-2 control-label required">Amazonログインボタンサイズ <span class="text-danger small">必須</span></label>
+
+                                <div class="col-sm-10 {% if form.cart_button_size.vars.errors is not empty %}has-error{% endif %}">
+                                    {{ form_widget(form.cart_button_size) }}
+                                    {{ form_errors(form.cart_button_size) }}
+                                </div>
+                            </div>
+                            <div class="form-group"
+                                 {% if form.cart_button_place.vars.errors is not empty %}has-error{% endif %}>
+                                <label class="col-sm-2 control-label required">Amazonログインボタン配置 <span class="text-danger small">必須</span></label>
+
+                                <div class="col-sm-10 {% if form.cart_button_place.vars.errors is not empty %}has-error{% endif %}">
+                                    {{ form_widget(form.cart_button_place) }}
+                                    {{ form_errors(form.cart_button_place) }}
+                                </div>
+                            </div>
+                            <div id="button_code_cart"{% if form.cart_button_place.vars.value == 'auto' %}style="display:none;"{% endif %}>
+                                <p>以下のコードをカート画面のテンプレートファイルに追記して下さい。</p>
+                                <p>※ コンテンツ管理 > ページ管理 > 現在のカゴの中</p>
+                                <input type="text" class="lockon_card_row form-control" readonly="readonly" value='{{"<p id=\"AmazonPayButton\"></p>"}}'/>
+                            </div>
+                        </div>
+                        <div id="button_select_products" {% if 'products_detail' not in form.button_select.vars.value %}style="display:none;"{% endif %}>
+                            <h4>▼商品詳細画面ボタン設定</h4>
+                            <div class="form-group"
+                                 {% if form.products_button_color.vars.errors is not empty %}has-error{% endif %}>
+                                <label class="col-sm-2 control-label required">Amazonログインボタンカラー <span class="text-danger small">必須</span></label>
+
+                                <div class="col-sm-10 {% if form.products_button_color.vars.errors is not empty %}has-error{% endif %}">
+                                    {{ form_widget(form.products_button_color) }}
+                                    {{ form_errors(form.products_button_color) }}
+                                </div>
+                            </div>
+                            <div class="form-group"
+                                 {% if form.products_button_size.vars.errors is not empty %}has-error{% endif %}>
+                                <label class="col-sm-2 control-label required">Amazonログインボタンサイズ <span class="text-danger small">必須</span></label>
+
+                                <div class="col-sm-10 {% if form.products_button_size.vars.errors is not empty %}has-error{% endif %}">
+                                    {{ form_widget(form.products_button_size) }}
+                                    {{ form_errors(form.products_button_size) }}
+                                </div>
+                            </div>
+                            <div class="form-group"
+                                 {% if form.products_button_place.vars.errors is not empty %}has-error{% endif %}>
+                                <label class="col-sm-2 control-label required">Amazonログインボタン配置 <span class="text-danger small">必須</span></label>
+
+                                <div class="col-sm-10 {% if form.products_button_place.vars.errors is not empty %}has-error{% endif %}">
+                                    {{ form_widget(form.products_button_place) }}
+                                    {{ form_errors(form.products_button_place) }}
+                                </div>
+                            </div>
+                            <div id="button_code_products"{% if form.products_button_place.vars.value == 'auto' %}style="display:none;"{% endif %}>
+                                <p>以下のコードを商品詳細画面のテンプレートファイルに追記して下さい。</p>
+                                <p>※ コンテンツ管理 > ページ管理 > 商品詳細ページ</p>
+                                <input type="text" class="lockon_card_row form-control" readonly="readonly" value='{{"{% if Product.stock_find %}<p id=\"AmazonPayButton\"></p>{% endif %}"}}'/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">ウィジェット設定</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">お届け先ウィジェットサイズ(縦) <span class="text-danger small">必須</span></label>
+                            <div class="col-sm-10 {% if form.deliv_widget_height.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.deliv_widget_height) }}
+                                {{ form_errors(form.deliv_widget_height) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">お届け先ウィジェットサイズ(横) <span class="text-danger small">必須</span></label>
+                            <div class="col-sm-10 {% if form.deliv_widget_width.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.deliv_widget_width) }}
+                                {{ form_errors(form.deliv_widget_width) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">お支払い方法ウィジェットサイズ(縦) <span class="text-danger small">必須</span></label>
+                            <div class="col-sm-10 {% if form.payment_widget_height.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.payment_widget_height) }}
+                                {{ form_errors(form.payment_widget_height) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">お支払い方法ウィジェットサイズ(横) <span class="text-danger small">必須</span></label>
+                            <div class="col-sm-10 {% if form.payment_widget_width.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.payment_widget_width) }}
+                                {{ form_errors(form.payment_widget_width) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" id="aside_column">
+                <div class="col_inner">
+                    <div class="box no-header">
+                        <div class="box-body">
+                            <div class="row text-center">
+                                <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
+                                    <button class="btn btn-primary btn-block btn-lg" onclick="document.form1.submit();">
+                                        この内容で登録する
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <div class="box no-header">
+                        <div class="box-body">
+                            <div class="row text-center">
+                                <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
+                                    <button id="parameter_confirm" class="btn btn-primary btn-block btn-lg">
+                                        設定内容確認
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+            <!-- /.col -->
+        </form>
+    </div>
+
+
+{% endblock %}

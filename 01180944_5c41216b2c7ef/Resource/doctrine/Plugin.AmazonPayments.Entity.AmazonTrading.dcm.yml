@@ -1,0 +1,36 @@
+Plugin\AmazonPayments\Entity\AmazonTrading:
+    type: entity
+    table: plg_amazonpayments_trading
+    repositoryClass: Plugin\AmazonPayments\Repository\AmazonTradingRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: amazon_trading_id
+            generator:
+                strategy: AUTO
+    fields:
+        trading_code:
+            type: text
+            nullable: false
+        authori_amount:
+            type: integer
+            nullable: false
+        capture_amount:
+            type: integer
+            nullable: false
+        refund_count:
+            type: integer
+            nullable: false
+
+    manyToOne:
+        AmazonOrder:
+            targetEntity: Plugin\AmazonPayments\Entity\AmazonOrder
+            inversedBy: AmazonTradings
+            joinColumn:
+                name: amazon_order_id
+                referencedColumnName: amazon_order_id
+
+    lifecycleCallbacks: {  }

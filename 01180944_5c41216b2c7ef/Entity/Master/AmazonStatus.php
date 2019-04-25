@@ -1,0 +1,2 @@
+<?php
+ namespace Plugin\AmazonPayments\Entity\Master; class AmazonStatus extends \Eccube\Entity\AbstractEntity { public function __toString() { return $this->getName(); } private $id; private $name; private $rank; public function setId($id) { $this->id = $id; return $this; } public function getId() { return $this->id; } public function setName($name) { $this->name = $name; return $this; } public function getName() { return $this->name; } public function setRank($rank) { $this->rank = $rank; return $this; } public function getRank() { return $this->rank; } } 

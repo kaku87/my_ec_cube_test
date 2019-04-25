@@ -1,0 +1,67 @@
+{#
+[LINE管理]-[設定]画面
+#}
+
+{% extends 'default_frame.twig' %}
+
+{% set menus = ['plugin_line_login_integration', 'plugin_line_login_setting'] %}
+
+{% block title %}LINE管理{% endblock %}
+{% block sub_title %}LINEログイン設定{% endblock %}
+
+{% block javascript %}
+    <script>
+    </script>
+{% endblock javascript%}
+
+{% block main %}
+    <form name="search_form" id="setting_form" method="post" action="{{ url('plugin_line_login_setting_commit') }}">
+        {{ form_widget(settingForm._token) }}
+
+        <div id="security_wrap" class="col-md-9">
+
+            <div id="security_box" class="box">
+                <div id="security_box__header" class="box-header">
+                    <h3 class="box-title">LINEログイン設定</h3>
+                </div><!-- /.box-header -->
+            </div><!-- /.box -->
+
+            <div id="security_box" class="box">
+                <div id="security_box__header" class="box-header">
+                    <h3 class="box-title">基本情報</h3>
+                </div><!-- /.box-header -->
+                <div id="security_box__body" class="box-body form-horizontal">
+                    <div id="security_dir_box" class="form-group">
+                        <label class="col-sm-3 col-lg-2 control-label">Channel ID</label>
+                        <div id="security_box__route_dir" class="col-sm-8 col-lg-8">
+                            {{ form_widget(settingForm.line_channel_id, { attr: { placeholder: 'Channel ID', class : 'input_line_channel_id form-control' } } ) }}
+                            {{ form_errors(settingForm.line_channel_id) }}                            
+                        </div>
+                    </div>
+                    <div id="security_dir_box" class="form-group">
+                        <label class="col-sm-3 col-lg-2 control-label">Channel Secret</label>
+                        <div id="security_box__route_dir" class="col-sm-8 col-lg-8">
+                            {{ form_widget(settingForm.line_channel_secret, { attr: { placeholder: 'Channel Secret', class : 'input_line_channel_secret form-control' } } ) }}
+                            {{ form_errors(settingForm.line_channel_secret) }}                            
+                        </div>
+                    </div>
+                </div><!-- /.box-body --> 
+            </div><!-- /.box -->
+        </div>
+
+        <div class="col-md-3" id="aside_column">
+            <div id="common_box" class="col_inner">
+                <div id="common_button_box" class="box no-header">
+                    <div id="common_button_box__body" class="box-body">
+                        <div id="common_button_box__insert_button_area" class="row text-center">
+                            <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
+                                <button class="btn btn-primary btn-block btn-lg" type="submit">保存する</button>
+                            </div>
+                        </div>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>
+        </div>                        
+
+    </form>
+{% endblock %}
